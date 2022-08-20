@@ -15,6 +15,8 @@ namespace ProcessPauser
         static extern uint SuspendThread(IntPtr hThread);
         [DllImport("kernel32.dll")]
         static extern int ResumeThread(IntPtr hThread);
+        [DllImport("kernel32.dll")]
+        static extern int CloseHandle(IntPtr hThread);
 
         public static void Suspend(this Process process)
         {
@@ -26,6 +28,7 @@ namespace ProcessPauser
                     break;
                 }
                 SuspendThread(pOpenThread);
+                CloseHandle(pOpenThread);
             }
         }
         public static void Resume(this Process process)
@@ -38,6 +41,7 @@ namespace ProcessPauser
                     break;
                 }
                 ResumeThread(pOpenThread);
+                CloseHandle(pOpenThread);
             }
         }
         public static void Print(this Process process)

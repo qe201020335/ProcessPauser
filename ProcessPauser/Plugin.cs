@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using IPA;
-using IPA.Config;
-using IPA.Config.Stores;
-using UnityEngine.SceneManagement;
-using UnityEngine;
 using IPALogger = IPA.Logging.Logger;
 
 namespace ProcessPauser
@@ -16,6 +10,8 @@ namespace ProcessPauser
     {
         internal static Plugin Instance { get; private set; }
         internal static IPALogger Log { get; private set; }
+
+        private Stack<Process> _processes = new Stack<Process>();
 
         [Init]
         public void Init(IPALogger logger)
@@ -50,6 +46,28 @@ namespace ProcessPauser
         public void OnApplicationQuit()
         {
             Log.Debug("OnApplicationQuit");
+            UnPauseProcess();
+        }
+
+        private void PauseProcess()
+        {
+            var p = Process.GetProcessesByName("wallpaper64.exe");
+            foreach (var process in p)
+            {
+                Log.Info($"Pause {process.ProcessName}, pid {process.Id}");
+                process.Suspend();
+                _processes.Push(process);
+            }
+        }
+
+        private void UnPauseProcess()
+        {
+            while (_processes.Count > 0)
+            {
+                var process = _processes.Pop();
+                Log.Info($"Unpause {process.ProcessName}, pid {process.Id}");
+                process.Resume();
+            }
         }
     }
 }
