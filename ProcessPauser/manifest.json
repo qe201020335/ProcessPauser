@@ -1,7 +1,7 @@
-{
+﻿{
   "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
   "id": "ProcessPauser",
-  "name": "$projectname$",
+  "name": "ProcessPauser",
   "author": "",
   "version": "0.0.1",
   "description": "",

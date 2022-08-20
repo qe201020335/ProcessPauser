@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessPauser", "ProcessPauser\ProcessPauser.csproj", "{1D5D9AD1-D1A6-42D5-BEAB-6DF3453BFB70}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessPauser", "ProcessPauser\ProcessPauser.csproj", "{96994813-7E00-4346-A4E2-C38BE0F98547}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1D5D9AD1-D1A6-42D5-BEAB-6DF3453BFB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D5D9AD1-D1A6-42D5-BEAB-6DF3453BFB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D5D9AD1-D1A6-42D5-BEAB-6DF3453BFB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D5D9AD1-D1A6-42D5-BEAB-6DF3453BFB70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96994813-7E00-4346-A4E2-C38BE0F98547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96994813-7E00-4346-A4E2-C38BE0F98547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96994813-7E00-4346-A4E2-C38BE0F98547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96994813-7E00-4346-A4E2-C38BE0F98547}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD26104B-BCBD-4E3F-87AE-A284304CB9EA}
 	EndGlobalSection
 EndGlobal
